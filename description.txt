@@ -1,0 +1,22 @@
+
+
+    Since our wallet service need to read and write on the user data, we need to know the user and reach out the database to create the necessary changes on user data. For this purpose  we need an authentication system for a user to use our wallet service. 
+    
+    I assumed that this has done in another API endpoint as our mono wallet service will work like a microservice. But to be able test our wallet system we need to have some functionality of this auth system.
+    
+  
+    I used laravel's sanctum auth system as it is recommended for API authentication. I created the necessary endpoints to be able to authenticate and test our wallet service.
+
+    With this system the user will first need to register/login to have an authentication token. User can only use our system with this auth-token. 
+
+    After succesfull authentication, user will be able to send request to our service and use promotion codes. 
+
+    But before this to happen we also need that user have a wallet on his account. This can be done by the backoffice's other services which is used to manage customer's account and wallet details on the backend side. 
+    
+    Again I assumed that these are done by other services and before user will send request to our mono wallet service, it has to have a verified wallet system created by the admins. I created other backoffice routes for this. 
+
+    I didn't put an auth system for backoffice routes as I assumed that this has already done by another service and they also will use a similar kind of token system to be able to use the permitted routes and create actions on the backend side as admins or moderators.  
+       
+    I tested the desired endpoints with POSTMAN and they are working as it is requested. 
+
+    
